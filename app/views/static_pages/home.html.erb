@@ -1,0 +1,117 @@
+  <!-- First Band (Slider) -->
+  <!-- The Orbit slider is initialized at the bottom of the page by calling .orbit() on #slider -->
+    
+    <div class="twelve columns no-padding">
+      <!-- These slides and captions should be dynamic based on some kind of user input model -->
+      <div id="slider" class="orbit-wrapper" style="height: 300px;">
+
+        <div class="brooklynbridge" data-caption="#captionOne">
+          <h1>Don't let your talent go to waste!</h1>
+          <h2>Get booked for your next performance!</h2>
+          <h3>Take a minute to sign up</h3>
+          <form style="float: left">
+            <div class="row">
+              <div class="six columns">
+                <input type="text" placeholder="Email" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="three columns">
+                <input type="text" placeholder="Create Password" />
+              </div>
+              <div class="three columns" style="float: left">
+                <input type="text" placeholder="Confirm Password" />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="shanghai" data-caption="#captionTwo">
+          <fieldset>
+            <legend><h1>YouContract</h1></legend>
+            <h2>This site uses Foundation by Zurb.</h2>
+            <h3>And Ruby on Rails</h3>
+          </fieldset>
+        </div>
+
+          <div class="niagarafalls" data-caption="#captionThree">
+            <div class="eight columns">
+              <h2>Get in touch!</h2>
+              <a href="#" class="large square button right">Contact Us</a>
+              <h3>We'd love to hear from you RIGHT NOW</h3>
+            </div>
+          </div>
+ 
+          <div class="deserttrees" data-caption="#captionFour">
+            <div class="eight columns">
+              <fieldset>
+                <legend><h2>Panel Box</h2></legend>
+                  <a href="#" class="large square button right">BUTTON</a>
+                  <h3>With some text or form here</h3>
+                </fieldset>
+            </div>
+          </div>
+      </div>
+      <span class="orbit-caption" id="captionOne">Please feel free to explore</span>
+      <span class="orbit-caption" id="captionTwo">Shanghai</span>
+      <span class="orbit-caption" id="captionThree">Niagara Falls</span>
+      <span class="orbit-caption" id="captionFour">Desert Trees</span>
+      <hr />
+  </div>
+  
+  <!-- Three-up Content Blocks -->
+  
+    <div class="four columns">
+      <img src="http://placehold.it/400x300&text=[img]" />
+      <h4>Newest Event</h4>
+      <p> Event.last.description </p>
+    </div>
+    
+    <div class="four columns">
+      <img src="http://placehold.it/400x300&text=[img]" />
+      <h4>Featured Talent</h4>
+      <p> User.youtubename </p>
+      <p> User.description </p>
+    </div>
+    
+    <div class="four columns">
+      <img src="http://placehold.it/400x300&text=[img]" />
+      <h4>Highest Paying Event</h4>
+      <p> Event.find_by_highest_payout(params[:payout]) </p>
+    </div>
+    
+  
+  
+  <!-- Call to Action Panel
+  <div class="row">
+    <div class="twelve columns">
+    
+      <div class="panel">
+        <h4>Get in touch!</h4>
+            
+        <div class="row">
+          <div class="nine columns">
+            <p>We'd love to hear from you, you attractive person you.</p>
+          </div>
+          <div class="three columns">
+            <a href="#" class="square button right">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  -->
+
+<!-- Put this above your </body> tag -->
+<script type="text/javascript">
+  $(window).load(function() {
+      $('#slider').orbit({
+animation: 'fade',
+animationSpeed: 750,
+timer: false,
+pauseOnHover: false,
+fluid: true
+      });
+  });
+</script>

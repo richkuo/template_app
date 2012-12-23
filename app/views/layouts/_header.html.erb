@@ -1,0 +1,28 @@
+<!-- Header and Nav -->
+<header>
+
+    <div class="three columns">
+      <h1><%= link_to "#HOME", root_path %></h1>
+    </div>
+    <div class="nine columns">
+      <ul class="nav-bar right">
+        <li><a href="/test">Test 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li class="has-flyout">
+          <a href="#">Dropdown 4</a>
+          <a class="flyout-toggle" href="#"><span> </span></a>
+          <ul class="flyout">
+            <li><a href="#">Dropdown Link 1</a></li>
+            <li><a href="#">Dropdown Link 2</a></li>
+            <!-- This does not work -->
+            <li class="divider"></li>
+            <li><a href="#">Dropdown Link 3</a></li>
+            <li><a href="#">Dropdown Link 4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+</header>
+  <!-- End Header and Nav -->

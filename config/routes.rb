@@ -1,6 +1,24 @@
 TemplateApp::Application.routes.draw do
+  get "static_pages/home"
+
+  get "static_pages/about"
+
+  get "static_pages/contact"
+
+  get "static_pages/terms"
+
+  get "static_pages/privacy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  
+  root to: 'pages#home'
+
+  match '/about', to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
+  match '/terms', to: 'static_pages#terms'
+  match '/privacy', to: 'static_pages#privacy'
+  match '/feedback', to: 'static_pages#feedback'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
