@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   attr_accessible :url
 
-  def parse_page
+  def parse_page(a)
   	@all = ""
   	open(self.url) {|f|
   		f.each_line {|line| @all << line}
@@ -14,6 +14,8 @@ class Article < ActiveRecord::Base
   	@response[:image] = @image
   	@description = @all.scan(/<meta[\s]+property="og:description"[\s]+content="([^"]+)"/i).flatten[0]
   	@response[:description] = @description
+    puts a
+    @response[:ghost_id] = a
 
   	@response
 

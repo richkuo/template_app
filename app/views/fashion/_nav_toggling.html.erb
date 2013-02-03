@@ -7,6 +7,9 @@ $('#page_details_nav').click(function() {
 	$('#social_accounts_show').hide("slow");
 	$('#page_settings_form').hide("slow");
 	$('#page_settings_show').hide("slow");
+	$('span#articles_form_1').hide("slow");
+	$('span#articles_form_2').hide("slow");
+	$('span#articles_form_3').hide("slow");
 });
 $('#press_articles_nav').click(function() {
 	$('#press_articles_form').toggle(1000/2);
@@ -18,7 +21,32 @@ $('#press_articles_nav').click(function() {
 	$('#social_accounts_show').hide("slow");
 	$('#page_settings_form').hide("slow");
 	$('#page_settings_show').hide("slow");
+	$('span#articles_form_1').show("slow");
+	$('span#articles_form_2').hide("slow");
+	$('span#articles_form_3').hide("slow");
 });
+$('button#new_article_b').click(function() {
+	$('button#new_article_b').hide("slow");
+	$('span#articles_form_1').hide("slow");
+	$('span#articles_form_2').show("slow");
+	$('button#new_article_c').show("slow");
+	$('#press_articles_input_a').show("slow");
+	$('input#press_articles_title').val("");
+	$('input#press_articles_description').val("");
+	$('input#press_articles_image').val("");
+});
+
+$('button#new_article_c').click(function() {
+	$('button#new_article_c').hide("slow");
+	$('span#articles_form_2').hide("slow");
+	$('span#articles_form_3').show("slow");
+	$('button#new_article_d').show("slow");
+	$('#press_articles_input_b').show("slow");
+	$('input#press_articles_title').val("");
+	$('input#press_articles_description').val("");
+	$('input#press_articles_image').val("");
+});
+
 $('#social_accounts_nav').click(function() {
 	$('#social_accounts_form').toggle(1000/2);
 	$('#social_accounts_show').toggle(1400/2);
@@ -29,6 +57,9 @@ $('#social_accounts_nav').click(function() {
 	$('#press_articles_show').hide("slow");
 	$('#page_settings_form').hide("slow");
 	$('#page_settings_show').hide("slow");
+	$('span#articles_form_1').hide("slow");
+	$('span#articles_form_2').hide("slow");
+	$('span#articles_form_3').hide("slow");
 });
 $('#page_settings_nav').click(function() {
 	$('#page_settings_form').toggle(1000/2);
@@ -40,4 +71,7 @@ $('#page_settings_nav').click(function() {
 	$('#press_articles_show').hide("slow");
 	$('#social_accounts_form').hide("slow");
 	$('#social_accounts_show').hide("slow");
+	$('span#articles_form_1').hide("slow");
+	$('span#articles_form_2').hide("slow");
+	$('span#articles_form_3').hide("slow");
 });

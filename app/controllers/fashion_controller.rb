@@ -3,6 +3,10 @@ class FashionController < ApplicationController
   def signup
     @user = User.new
     @article = Article.new
+    articleid = Article.last.id
+    @article1 = Article.last
+    @article2 = Article.find(articleid-1)
+    @article3 = Article.find(articleid-2)
 
   end
 

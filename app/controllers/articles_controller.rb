@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
 
 	 def create
 	 	@article = Article.create(url: params[:article][:url])
-	 	@result = @article.parse_page
+	 	@ghost_id = params[:article][:ghost_id]
+	 	@result = @article.parse_page(@ghost_id)
 
 	 	respond_to do |format|
 	 		if @article.save

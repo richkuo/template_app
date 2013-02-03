@@ -1,0 +1,8 @@
+<%= form_for(@article, :html => {:id => "press_articles_input_b", :style => "display: none"}, remote: true)  do |f| %>
+
+ <!-- html: { method: :delete } -->
+	<%= f.text_field :url, :value => "" %>
+	<%= f.hidden_field :ghost_id, :value => "b" %>
+	<%= f.submit :class => "button", :id=>"button_b" %>
+<% end %>
+

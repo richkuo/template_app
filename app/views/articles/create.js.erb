@@ -1,10 +1,60 @@
-
 var title = "<%= @result[:title] %>";
 var image = "<%= @result[:image] %>";
 
 var description = "<%= j(@result[:description]) %>";
 
+var ghost_id = "<%= @result[:ghost_id] %>"
 
-$('input#press_articles_title').val(title);
-$('input#press_articles_image').val(image);
-$('input#press_articles_description').val(description);
+if(ghost_id === "z"){
+	$('input#press_articles_title').val(title);
+	$('input#press_articles_image').val(image);
+	$('input#press_articles_description').val(description);
+
+	$('p#demo_articles_title').text(title.substring(0,140)+'...');
+	$('img#press_articles_image').attr("src", image);
+	$('p#demo_articles_description').text(description.substring(0,140)+'...');
+	$('p#demo_articles_analytics').show();
+
+	$('#article1').show();
+}
+
+
+
+if(ghost_id === "a"){
+	var title = "<%= @result[:title] %>";
+	var image = "<%= @result[:image] %>";
+
+	var description = "<%= j(@result[:description]) %>";
+
+
+	$('input#press_articles_title').val(title);
+	$('input#press_articles_image').val(image);
+	$('input#press_articles_description').val(description);
+
+	$('p#demo_articles_title_a').text(title.substring(0,140)+'...');
+	$('img#press_articles_image_a').attr("src", image);
+	$('p#demo_articles_description_a').text(description.substring(0,140)+'...');
+	$('p#demo_articles_analytics_a').show();
+
+	$('#article2').show();
+}
+
+
+if(ghost_id === "b"){
+	var title = "<%= @result[:title] %>";
+	var image = "<%= @result[:image] %>";
+
+	var description = "<%= j(@result[:description]) %>";
+
+
+	$('input#press_articles_title').val(title);
+	$('input#press_articles_image').val(image);
+	$('input#press_articles_description').val(description);
+
+	$('p#demo_articles_title_b').text(title.substring(0,140)+'...');
+	$('img#press_articles_image_b').attr("src", image);
+	$('p#demo_articles_description_b').text(description.substring(0,140)+'...');
+	$('p#demo_articles_analytics_b').show();
+
+	$('#article3').show();
+}
