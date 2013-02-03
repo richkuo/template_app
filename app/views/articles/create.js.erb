@@ -3,6 +3,11 @@ console.log("<%= @result.class %>");
 var title = "<%= @result[:title] %>";
 var image = "<%= @result[:image] %>";
 
-var text = "<%= j(@result[:text]) %>";
+var description = "<%= j(@result[:description]) %>";
 
-console.log(title+' '+image+' '+text);
+console.log(title+' '+image+' '+description);
+
+
+$('input#press_articles_title').val(title);
+$('input#press_articles_image').val(image);
+$('input#press_articles_description').val(description);

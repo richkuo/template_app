@@ -59,17 +59,21 @@
 		</form>
 
         <li><a href="#" id="press_articles_nav">Press Articles</a></li>
+        		    <%= render 'articles/form' %>
+
         <form id="press_articles_form" style="display:none">
+
 		  <label>Article URL</label>
 		  <input id="press_articles_url" type="text" placeholder="http://example.com" />
-		  <label>Subject</label>
-		  <input type="text" class="twelve" placeholder="Article Subject" />
+
+		  <label>Title</label>
+		  <input id="press_articles_title" type="text" class="twelve" placeholder="Article Subject" />
 		  <label>Short Description</label>
-		  <input type="text" class="twelve" placeholder="Article Description" />
+		  <input id="press_articles_description" type="text" class="twelve" placeholder="Article Description" />
 		  <label>Date</label>
 		  <input type="text" class="twelve" placeholder="Article Date Published" />
 		  <label>Upload Image</label>
-		  <input type="text" class="twelve" placeholder="Upload Image" />
+		  <input id="press_articles_image" type="text" class="twelve" placeholder="Upload Image" />
 
 		  <input id="press_articles_save" type="submit" class="button" value="Save" />
 		  <button class="button">New Article</button>
@@ -169,4 +173,4 @@ $('#press_articles_save').click(function() {
 });
 
 </script>
-  <%= render 'articles/form' %>
+

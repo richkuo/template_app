@@ -12,8 +12,8 @@ class Article < ActiveRecord::Base
   	@response[:title] = @title
   	@image = @all.scan(/<meta[\s]+property="og:image"[\s]+content="([^"]+)"/i).flatten[0]
   	@response[:image] = @image
-  	@text = @all.scan(/<meta[\s]+property="og:description"[\s]+content="([^"]+)"/i).flatten[0]
-  	@response[:text] = @text
+  	@description = @all.scan(/<meta[\s]+property="og:description"[\s]+content="([^"]+)"/i).flatten[0]
+  	@response[:description] = @description
 
   	@response
 
