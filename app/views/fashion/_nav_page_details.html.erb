@@ -1,0 +1,16 @@
+$('#page_details_title').keyup(function(event){
+		fieldtext = document.getElementById("page_details_title").value;
+		$('span#demo_page_title').text(fieldtext);
+});
+
+$('#page_details_subtitle').keyup(function(event){
+		fieldtext = document.getElementById("page_details_subtitle").value;
+		$('span#demo_page_subtitle').text(fieldtext);
+});
+
+$('#page_details_logo').blur(function(event){
+		fieldtext = document.getElementById("page_details_logo").value;
+		$('img#demo_page_logo').attr("src", fieldtext);
+		$('img#demo_page_logo').show().fadeIn(500);
+		console.log(fieldtext);
+});

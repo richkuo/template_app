@@ -82,26 +82,28 @@
         <li><a href="#" id="social_accounts_nav">Social Accounts</a></li>
         <form id="social_accounts_form" style="display:none">
 		  <label>Twitter</label>
-		  <input type="text" placeholder="@example" />
+		  <input id="twitter_form" type="text" placeholder="@example" />
 		  <label>Facebook Page</label>
-		  <input type="text" class="twelve" placeholder="facebook.com/ExamplePage" />
+		  <input id="facebook_form" type="text" class="twelve" placeholder="facebook.com/ExamplePage" />
 		  <label>Pinterest</label>
-		  <input type="text" class="twelve" placeholder="pinterest.com/Example" />
+		  <input id="pinterest_form" type="text" class="twelve" placeholder="pinterest.com/Example" />
 		  <label>Instagram</label>
-		  <input type="text" class="twelve" placeholder="instagram.com/Example" />
-		  <label>Tumblr</label>
-		  <input type="text" class="twelve" placeholder="tumblr.com/Example" />
+		  <input id="instagram_form" type="text" class="twelve" placeholder="instagram.com/Example" />
+		  <label>Foursquare</label>
+		  <input id="foursquare_form" type="text" class="twelve" placeholder="tumblr.com/Example" />
+		  <label>Swaag</label>
+		  <input id="swaag_form" type="text" class="twelve" placeholder="swaag.com/Example" />
 
 		  <input id="social_accounts_save" type="submit" class="button" value="Save" />
 		</form>
-        <li><a href="#" id="page_settings_nav">Page Settings</a></li>
+        <li><a href="#" id="page_settings_nav">Account Settings</a></li>
         <form id="page_settings_form" style="display:none">
 		  <label>Email Address</label>
 		  <input type="text" placeholder="example@example.com" />
-		  <label>Google Analytics ID</label>
-		  <input type="text" class="twelve" placeholder="a24sdfIOHN" />
+		  <label>Save Id</label>
+		  <input type="text" class="twelve" placeholder="1234" />
 
-		  <input id="page_settings_save" type="submit" class="button" value="Save" />
+		  <input id="save_id" type="submit" class="button" value="Save" />
 		</form>
 
       </ul>
@@ -110,49 +112,10 @@
   </div>
 
 <script>
-$('#page_details_nav').click(function() {
-	$('#page_details_form').toggle(1000/2);
-	$('#page_details_show').toggle(1400/2);
-	$('#press_articles_form').hide("slow");
-	$('#press_articles_show').hide("slow");
-	$('#social_accounts_form').hide("slow");
-	$('#social_accounts_show').hide("slow");
-	$('#page_settings_form').hide("slow");
-	$('#page_settings_show').hide("slow");
-});
-$('#press_articles_nav').click(function() {
-	$('#press_articles_form').toggle(1000/2);
-	$('#press_articles_input').toggle(1000/2);
-	$('#press_articles_show').toggle(1400/2);
-	$('#page_details_form').hide("slow");
-	$('#page_details_show').hide("slow");
-	$('#social_accounts_form').hide("slow");
-	$('#social_accounts_show').hide("slow");
-	$('#page_settings_form').hide("slow");
-	$('#page_settings_show').hide("slow");
-});
-$('#social_accounts_nav').click(function() {
-	$('#social_accounts_form').toggle(1000/2);
-	$('#social_accounts_show').toggle(1400/2);
-	$('#press_articles_input').hide("slow");
-	$('#page_details_form').hide("slow");
-	$('#page_details_show').hide("slow");
-	$('#press_articles_form').hide("slow");
-	$('#press_articles_show').hide("slow");
-	$('#page_settings_form').hide("slow");
-	$('#page_settings_show').hide("slow");
-});
-$('#page_settings_nav').click(function() {
-	$('#page_settings_form').toggle(1000/2);
-	$('#page_settings_show').toggle(1400/2);
-	$('#press_articles_input').hide("slow");
-	$('#page_details_form').hide("slow");
-	$('#page_details_show').hide("slow");
-	$('#press_articles_form').hide("slow");
-	$('#press_articles_show').hide("slow");
-	$('#social_accounts_form').hide("slow");
-	$('#social_accounts_show').hide("slow");
-});
+
+<%= render 'nav_toggling' %>
+
+//ajax calls
 
 $('#page_settings_save').click(function() {
 	$.ajax({
@@ -173,22 +136,10 @@ $('#press_articles_save').click(function() {
 	});
 });
 
-$('#page_details_title').keyup(function(event){
-		fieldtext = document.getElementById("page_details_title").value;
-		$('span#demo_page_title').text(fieldtext);
-});
+// end ajax calls
 
-$('#page_details_subtitle').keyup(function(event){
-		fieldtext = document.getElementById("page_details_subtitle").value;
-		$('span#demo_page_subtitle').text(fieldtext);
-});
+<%= render 'nav_page_details' %>
 
-$('#page_details_logo').blur(function(event){
-		fieldtext = document.getElementById("page_details_logo").value;
-		$('img#demo_page_logo').attr("src", fieldtext);
-		$('img#demo_page_logo').show().fadeIn(500);
-		console.log(fieldtext);
-});
+<%= render 'nav_social_accounts' %>
 
 </script>
-
