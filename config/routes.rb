@@ -1,5 +1,5 @@
 TemplateApp::Application.routes.draw do
-  get "static_pages/home"
+  #get "static_pages/home"
 
   get "static_pages/about"
 
@@ -9,10 +9,23 @@ TemplateApp::Application.routes.draw do
 
   get "static_pages/privacy"
 
+  resources :articles
+
+  post "articles"=>"articles#create", :as => "create"
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  root to: 'pages#home'
+  root to: 'static_pages#home'
+
+  match '/fashion/signup', to: 'fashion#signup'
+  match '/fashion/social_accounts', to: 'fashion#social_accounts'
+  match '/fashion/press_articles', to: 'fashion#press_articles'
+  match '/fashion/page_setup', to: 'fashion#analytics'
+
+  match '/fashion/new', to: 'articles#new'
 
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

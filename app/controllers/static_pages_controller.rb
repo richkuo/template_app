@@ -13,4 +13,17 @@ class StaticPagesController < ApplicationController
 
   def privacy
   end
+
+  def signup
+  end
+
+  def social
+  end
+
+  def press
+  end
+
+  def page_setup
+  end
+
 end

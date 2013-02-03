@@ -1,0 +1,6 @@
+<%= form_for(@article, :url => articles_path, remote: true) do |f| %>
+
+ <!-- html: { method: :delete } -->
+	<%= f.text_field :url, :value => "http://hack.rapidrise.com/article.htm" %>
+	<%= f.submit %>
+<% end %>

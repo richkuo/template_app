@@ -1,0 +1,172 @@
+<!-- Header -->
+  
+  <div class="row">
+    <!-- <div class="nine columns"> -->
+      <ul class="link-list left">
+        <li><a href="#">Section 1</a></li>
+        <li><a href="#">Section 2</a></li>
+        <li><a href="#">Section 3</a></li>
+        <li><a href="#">Section 4</a></li>
+      </ul>
+    <!-- </div> -->
+  </div>
+  
+  <!-- End Header -->
+  
+  <div class="row">   
+    
+    <!-- Main Content Section -->
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <div class="nine columns push-three" id="page_details_show">
+      
+    	<%= render :partial => 'page_details' %>
+            
+    </div>
+
+    <div class="nine columns push-three" id="press_articles_show" style="display: none">
+      
+    	<%= render :partial => 'press_articles' %>
+            
+    </div>
+
+    <div class="nine columns push-three" id="social_accounts_show" style="display: none">
+    
+    	<%= render :partial => 'social_accounts' %>
+            
+    </div>
+
+    <div class="nine columns push-three" id="page_settings_show" style="display: none">
+      
+    	<%= render :partial => 'page_settings' %>
+            
+    </div>
+    
+    <!-- Nav Sidebar -->
+    <!-- This is source ordered to be pulled to the left on larger screens -->
+    <div class="three columns pull-nine">
+        
+      <ul class="side-nav">
+        <li><a href="#" id="page_details_nav">Page Details</a></li>
+        <form id="page_details_form">
+		  <label>Title</label>
+		  <input id="page_details_title" type="text" placeholder="Example Title" />
+		  <label>Subtitle</label>
+		  <input id="page_details_subtitle" type="text" class="twelve" placeholder="Example Subtitle" />
+		  <label>Logo</label>
+		  <input id="page_details_logo" type="text" class="twelve" placeholder="Logo" />
+
+		  <input id="page_articles_save" type="submit" class="button" value="Save" />
+		</form>
+
+        <li><a href="#" id="press_articles_nav">Press Articles</a></li>
+        <form id="press_articles_form" style="display:none">
+		  <label>Article URL</label>
+		  <%= render 'articles/form' %>
+		  <input id="press_articles_url" type="text" placeholder="http://example.com" />
+		  <label>Subject</label>
+		  <input type="text" class="twelve" placeholder="Article Subject" />
+		  <label>Short Description</label>
+		  <input type="text" class="twelve" placeholder="Article Description" />
+		  <label>Date</label>
+		  <input type="text" class="twelve" placeholder="Article Date Published" />
+		  <label>Upload Image</label>
+		  <input type="text" class="twelve" placeholder="Upload Image" />
+
+		  <input id="press_articles_save" type="submit" class="button" value="Save" />
+		  <button class="button">New Article</button>
+		</form>
+
+        <li><a href="#" id="social_accounts_nav">Social Accounts</a></li>
+        <form id="social_accounts_form" style="display:none">
+		  <label>Twitter</label>
+		  <input type="text" placeholder="@example" />
+		  <label>Facebook Page</label>
+		  <input type="text" class="twelve" placeholder="facebook.com/ExamplePage" />
+		  <label>Pinterest</label>
+		  <input type="text" class="twelve" placeholder="pinterest.com/Example" />
+		  <label>Instagram</label>
+		  <input type="text" class="twelve" placeholder="instagram.com/Example" />
+		  <label>Tumblr</label>
+		  <input type="text" class="twelve" placeholder="tumblr.com/Example" />
+
+		  <input id="social_accounts_save" type="submit" class="button" value="Save" />
+		</form>
+        <li><a href="#" id="page_settings_nav">Page Settings</a></li>
+        <form id="page_settings_form" style="display:none">
+		  <label>Company Address</label>
+		  <input type="text" placeholder="@example" />
+		  <label>Google Analytics ID</label>
+		  <input type="text" class="twelve" placeholder="a24sdfIOHN" />
+
+		  <input id="page_settings_save" type="submit" class="button" value="Save" />
+		</form>
+
+      </ul>
+    </div>
+    
+  </div>
+
+
+
+<script>
+$('#page_details_nav').click(function() {
+	$('#page_details_form').toggle(1000);
+	$('#page_details_show').toggle(1400);
+	$('#press_articles_form').hide("slow");
+	$('#press_articles_show').hide("slow");
+	$('#social_accounts_form').hide("slow");
+	$('#social_accounts_show').hide("slow");
+	$('#page_settings_form').hide("slow");
+	$('#page_settings_show').hide("slow");
+});
+$('#press_articles_nav').click(function() {
+	$('#press_articles_form').toggle(1000);
+	$('#press_articles_show').toggle(1400);
+	$('#page_details_form').hide("slow");
+	$('#page_details_show').hide("slow");
+	$('#social_accounts_form').hide("slow");
+	$('#social_accounts_show').hide("slow");
+	$('#page_settings_form').hide("slow");
+	$('#page_settings_show').hide("slow");
+});
+$('#social_accounts_nav').click(function() {
+	$('#social_accounts_form').toggle(1000);
+	$('#social_accounts_show').toggle(1400);
+	$('#page_details_form').hide("slow");
+	$('#page_details_show').hide("slow");
+	$('#press_articles_form').hide("slow");
+	$('#press_articles_show').hide("slow");
+	$('#page_settings_form').hide("slow");
+	$('#page_settings_show').hide("slow");
+});
+$('#page_settings_nav').click(function() {
+	$('#page_settings_form').toggle(1000);
+	$('#page_settings_show').toggle(1400);
+	$('#page_details_form').hide("slow");
+	$('#page_details_show').hide("slow");
+	$('#press_articles_form').hide("slow");
+	$('#press_articles_show').hide("slow");
+	$('#social_accounts_form').hide("slow");
+	$('#social_accounts_show').hide("slow");
+});
+
+$('#page_settings_save').click(function() {
+	$.ajax({
+		type: "POST",
+		url: "https://fashionlaunch2013.appspot.com/user/1234/",
+		data: { name: "John", location: "Boston" }
+	}).done(function( msg ) {
+	  alert( "Data Saved: " + msg );
+	});
+});
+
+$('#press_articles_save').click(function() {
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:3000/articles/create"
+	}).done(function( msg ) {
+	  alert( "getgetget: " + msg );
+	});
+});
+
+</script>

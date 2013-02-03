@@ -1,0 +1,8 @@
+console.log("test");
+console.log("<%= @result.class %>");
+var title = "<%= @result[:title] %>";
+var image = "<%= @result[:image] %>";
+
+var text = "<%= j(@result[:text]) %>";
+
+console.log(title+' '+image+' '+text);
