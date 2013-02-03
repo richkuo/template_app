@@ -90,9 +90,36 @@ header {
 // Top Bar adjustments
 .top-bar {
   margin-bottom: 30px !important;
-  background: #abc
+  background: url(<%= 'logo-bg.png' %>) repeat-x;
+  height: 70px;
 }
 
+.top-bar li h1 a {
+  display: block;
+  text-indent: -1000000px;
+  background: url(<%= 'spotlight-logo.png' %>) no-repeat;
+  height: 70px;
+  width: 171px;
+}
+
+.top-bar ul {
+  height: 70px;
+}
+
+.top-bar > ul .name h1,
+.top-bar ul > li a:not(.button) {
+  height: 70px;
+}
+
+.top-bar > ul .name h1 {
+  padding-left: 25px;
+}
+
+dl.tabs {
+  border-bottom-width: 4px;
+  margin: 0 25px;
+  text-transform: uppercase;
+}
 
 // Settings file containing Foundation defaults
 
