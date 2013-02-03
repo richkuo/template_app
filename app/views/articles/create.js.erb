@@ -1,7 +1,7 @@
 var title = "<%= @result[:title] %>";
 var image = "<%= @result[:image] %>";
 
-var description = "<%= j(@result[:description]) %>";
+var description = "<%= j(@result[:description]).gsub(/'/, "") %>";
 
 var ghost_id = "<%= @result[:ghost_id] %>"
 
