@@ -5,7 +5,7 @@ class FashionController < ApplicationController
     @article = Article.new
 
   end
-  
+
   def social_acounts
   end
 
@@ -38,7 +38,7 @@ class FashionController < ApplicationController
   #   end
 
   #   puts "end"
-    
+
   #  end
 
   #  def new

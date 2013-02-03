@@ -11,13 +11,9 @@ TemplateApp::Application.routes.draw do
 
   resources :articles
 
-  post "articles"=>"articles#create", :as => "create"
-
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  
+
   root to: 'static_pages#home'
 
   match '/fashion/signup', to: 'fashion#signup'

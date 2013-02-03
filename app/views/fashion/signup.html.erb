@@ -1,5 +1,5 @@
 <!-- Header -->
-  
+
   <div class="row">
     <!-- <div class="nine columns"> -->
       <ul class="link-list left">
@@ -10,41 +10,41 @@
       </ul>
     <!-- </div> -->
   </div>
-  
+
   <!-- End Header -->
-  
-  <div class="row">   
-    
+
+  <div class="row">
+
     <!-- Main Content Section -->
     <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
     <div class="nine columns push-three" id="page_details_show">
-      
+
     	<%= render :partial => 'page_details' %>
-            
+
     </div>
 
     <div class="nine columns push-three" id="press_articles_show" style="display: none">
-      
+
     	<%= render :partial => 'press_articles' %>
-            
+
     </div>
 
     <div class="nine columns push-three" id="social_accounts_show" style="display: none">
-    
+
     	<%= render :partial => 'social_accounts' %>
-            
+
     </div>
 
     <div class="nine columns push-three" id="page_settings_show" style="display: none">
-      
+
     	<%= render :partial => 'page_settings' %>
-            
+
     </div>
-    
+
     <!-- Nav Sidebar -->
     <!-- This is source ordered to be pulled to the left on larger screens -->
     <div class="three columns pull-nine">
-        
+
       <ul class="side-nav">
         <li><a href="#" id="page_details_nav">Page Details</a></li>
         <form id="page_details_form">
@@ -61,7 +61,6 @@
         <li><a href="#" id="press_articles_nav">Press Articles</a></li>
         <form id="press_articles_form" style="display:none">
 		  <label>Article URL</label>
-		  <%= render 'articles/form' %>
 		  <input id="press_articles_url" type="text" placeholder="http://example.com" />
 		  <label>Subject</label>
 		  <input type="text" class="twelve" placeholder="Article Subject" />
@@ -103,7 +102,7 @@
 
       </ul>
     </div>
-    
+
   </div>
 
 
@@ -170,3 +169,4 @@ $('#press_articles_save').click(function() {
 });
 
 </script>
+  <%= render 'articles/form' %>
